@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SampleWebApiXamarin"
+             x:Class="SampleWebApiXamarin.MainPage">
+  <StackLayout>
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="50" />
+        <RowDefinition Height="50" />
+      </Grid.RowDefinitions>
+      <Button Text="Get" Clicked="clickGet"     Grid.Row="0" Grid.Column="0"/>
+      <Button Text="GetID" Clicked="clickGetId" Grid.Row="0" Grid.Column="1"/>
+      <Button Text="Post" Clicked="clickPost"   Grid.Row="0" Grid.Column="2"/>
+      <Button Text="PutID" Clicked="clickPutId" Grid.Row="1" Grid.Column="0"/>
+      <Button Text="DeleteID" Clicked="clickDeleteId" Grid.Row="1" Grid.Column="1"/>
+    </Grid>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="50" />
+        <RowDefinition Height="50" />
+        <RowDefinition Height="50" />
+        <RowDefinition Height="50" />
+      </Grid.RowDefinitions>
+      <Entry Text="{Binding Person.Id}"   Grid.Row="0" Grid.Column="0" Placeholder="ID" />
+      <Entry Text="{Binding Person.Name}" Grid.Row="1" Grid.Column="0" Placeholder="名前" />
+      <Entry Text="{Binding Person.Age}"  Grid.Row="2" Grid.Column="0" Placeholder="年齢" />
+      <Picker x:Name="picker" SelectedIndex="{Binding PerfectureIndex}" Title="都道府県を選択してください" Grid.Row="3" Grid.Column="0"  />
+    </Grid>
+    <Label x:Name="textResult" />
+    <ListView ItemsSource="{Binding Persons}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Horizontal">
+              <Label Text="{Binding Id}"   WidthRequest="50"/>
+              <Label Text="{Binding Name}" WidthRequest="100" />
+              <Label Text="{Binding Age}"  WidthRequest="50"/>
+              <Label Text="{Binding Perfecture.Name}" />
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

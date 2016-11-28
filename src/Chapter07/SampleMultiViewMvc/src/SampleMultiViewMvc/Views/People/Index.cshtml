@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SampleMultiViewMvc.Models.Person>
+@{
+    ViewData["Title"] = "Index";
+
+    if (User.Identity.IsAuthenticated)
+    {
+        ViewBag.UserName = User.Identity.Name;
+    }
+    else
+    {
+        ViewBag.UserName = "匿名";
+    }
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAttendance)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAttendance)
+            </td>
+            <td>
+<!-- ログイン状態でボタンを切り替える -->
+@if (User.Identity.IsAuthenticated) {
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> <span>|</span>
+}
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+@if (User.IsInRole("Administrator")) {
+                <span>|</span>   <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+}
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@Html.Partial("_Parts")
+
+

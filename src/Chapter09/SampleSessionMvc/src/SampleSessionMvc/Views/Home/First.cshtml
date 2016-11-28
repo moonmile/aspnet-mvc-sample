@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Http
+
+@{
+
+    ViewData["Title"] = "First Page";
+    var now = this.Context.Session.GetString("now");
+    var now2 = this.Context.Request.Cookies["my-cookie"];
+    var data = ViewBag.data;
+    var hash = ViewBag.hash;
+}
+
+<h2>First</h2>
+@*
+    <div>data: @data</div>
+    <div>hash: @hash</div>
+*@
+<div>Index access: @now </div>
+<a asp-action="Second">to Second page</a>
+
+
+

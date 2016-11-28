@@ -1,0 +1,42 @@
+﻿@model SampleControllerMvc.Models.Person
+
+@{
+    ViewData["Title"] = "Create Easy";
+}
+
+<h2>Create Easy</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Person</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Name" class="form-control" placeholder="名前を入力してください" />
+                <span asp-validation-for="Name" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmployeeNo" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EmployeeNo" class="form-control" placeholder="XXX-9999" />
+                <span asp-validation-for="EmployeeNo" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

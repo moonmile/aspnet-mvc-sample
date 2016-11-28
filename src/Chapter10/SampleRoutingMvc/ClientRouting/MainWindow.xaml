@@ -1,0 +1,24 @@
+﻿<Window x:Class="ClientRouting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientRouting"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="407" Width="674">
+    <Grid>
+        <Button Click="clickGet" Content="Get" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+        <TextBlock x:Name="text1" HorizontalAlignment="Left" Margin="90,40,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="280" Height="260"/>
+        <Button Click="clickGetId" Content="GetID" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+        <Button Click="clickPost" Content="Post" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+        <Button Click="clickPutId" Content="PutID" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="People" VerticalAlignment="Top" Width="220"/>
+        <Button Click="clickCreate" Content="Create" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+        <Button Click="clickUpdate" Content="Update" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+        <Button Click="clickSearch" Content="Search" HorizontalAlignment="Left" Margin="375,34,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+        <TextBox x:Name="text2" HorizontalAlignment="Left" Height="23" Margin="455,40,0,0" TextWrapping="Wrap" Text="masuda" VerticalAlignment="Top" Width="120"/>
+        <Button Click="clickSearchAge" Content="Search" HorizontalAlignment="Left" Margin="375,76,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+        <TextBox x:Name="text3" HorizontalAlignment="Left" Height="23" Margin="455,82,0,0" TextWrapping="Wrap" Text="30" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

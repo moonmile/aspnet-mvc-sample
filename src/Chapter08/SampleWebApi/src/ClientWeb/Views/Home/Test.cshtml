@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Web API TEST";
+}
+
+<h2>Web API test</h2>
+<p>
+    <input id="btnGet" type="button" value="Get" />
+</p>
+<p>
+    <input id="btnGetID" type="button" value="GetID" />
+</p>
+<p>
+    <input id="btnPost" type="button" value="Post" />
+</p>
+<p>
+    <input id="btnPutID" type="button" value="PutID" />
+</p>
+<div id="msg">Response message.</div>
+
+@section scripts 
+{
+    <script>
+        $(function () {
+            $('#btnGet').click(function () {
+                $.ajax("/api/People")
+                .then(function (res) {
+                    var msg = "";
+                    for (var i = 0; i < res.length; i++) {
+                        msg += res[i].name + " " + res[i].age + " " + res[i].perfecture.name + "<br />";
+                    }
+                    $("#msg").html(msg);
+                })
+                .fail(function () {
+                    $("#msg").text("error");
+                });
+            });
+        });
+        $(function () {
+            $('#btnGetID').click(function () {
+                $.ajax("/api/People/3")
+                .then(function (res) {
+                    $("#msg").text(res.name + " " + res.age);
+                })
+                .fail(function () {
+                    $("#msg").text("error");
+                });
+            });
+        });
+        $(function () {
+            $('#btnPost').click(function () {
+$.ajax("/api/People", { 
+    type: 'POST',
+    contentType: 'application/json; charset=utf-8',
+    data: JSON.stringify({ name: 'new person', age: 99, perfectureid: 2 })
+})
+                .then(function (res) {
+                    $("#msg").text(res);
+                })
+                .fail(function () {
+                    $("#msg").text("error");
+                });
+            });
+        });
+        $(function () {
+            $('#btnPutID').click(function () {
+                var id = 1012;
+$.ajax("/api/People/" + id, {
+    type: 'PUT',
+    contentType: 'application/json; charset=utf-8',
+    data: JSON.stringify({ id: id, name: 'update person', age: 100, perfectureid: 1 })
+})
+                .then(function (res) {
+                    $("#msg").text(res);
+                })
+                .fail(function () {
+                    $("#msg").text("error");
+                });
+            });
+        });
+    </script>
+}
+

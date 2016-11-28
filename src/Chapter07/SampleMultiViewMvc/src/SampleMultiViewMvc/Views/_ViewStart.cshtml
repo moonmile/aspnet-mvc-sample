@@ -1,0 +1,11 @@
+﻿@{
+    Layout = "_Layout";
+    if ( User.Identity.IsAuthenticated )
+    {
+        if (User.IsInRole("Administrator"))
+        {
+            // 管理者のときレイアウトを変更する
+            Layout = "_LayoutAdmin";
+        }
+    }
+}

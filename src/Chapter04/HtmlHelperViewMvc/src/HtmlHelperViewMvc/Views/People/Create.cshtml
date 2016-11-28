@@ -1,0 +1,84 @@
+@model HtmlHelperViewMvc.Models.Person
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Person</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Age" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Blog" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Blog" class="form-control" />
+                <span asp-validation-for="Blog" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmployeeNo" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EmployeeNo" class="form-control" />
+                <span asp-validation-for="EmployeeNo" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Hireate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Hireate" class="form-control" />
+                <span asp-validation-for="Hireate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="IsAttendance" />
+                    <label asp-for="IsAttendance"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PerfectureId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="PerfectureId" class ="form-control" asp-items="ViewBag.PerfectureId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

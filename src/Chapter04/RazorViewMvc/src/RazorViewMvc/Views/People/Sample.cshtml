@@ -1,0 +1,95 @@
+﻿@model List<RazorViewMvc.Models.Person>
+
+
+@{
+    ViewData["Title"] = "Sample";
+}
+@*
+
+@foreach ( var item in Model )
+{
+    @Html.DisplayNameFor(_ => item.Name)
+    @Html.DisplayName(nameof(item.Name))
+
+}
+*@
+
+<h2>Sample</h2>
+
+@*
+    @{
+        var a = 100;
+        var msg = "";
+        if (a < 50)
+        {
+            msg = "a は 50未満";
+        }
+        else
+        {
+            msg = "a は 50以上";
+        }
+    }
+
+    <div>ここに a = @(a) を表示する。</div>
+    <div>結果メッセージは @msg です。</div>
+*@
+
+    @{
+        var errorColor = "Red";
+    }
+
+        <div style="color: @errorColor; font-size:20px">
+            ここにエラーメッセージを表示します。
+        </div>
+
+@*
+
+    @{
+        Func<string, string> writeMessage =
+            (s) => { return $"こんにちは {s} さん";  };
+    }
+    @writeMessage("masuda")
+
+*@
+
+@*
+@{  int a = 100; }
+@if (a < 50)
+{
+    <div>変数 a は @a です。50未満になります</div>
+}
+else
+{
+    <div>変数 a は @a です。50以上になります</div>
+}
+*@
+
+@*
+@{ 
+    var lst = new string[]{
+        "北海道", "青森県", "東京都", "大阪府", "沖縄県" };
+}
+
+<div>都道府県</div>
+<ol>
+@foreach ( var item in lst )
+{
+    <li>@item</li>
+}
+</ol>
+*@
+
+
+
+
+@* 次の Razor 構文をコメントアウトする
+
+    @{
+        int a = 100;
+    }
+    <div>変数a の内容は @a です。</div>
+*@
+
+
+
+

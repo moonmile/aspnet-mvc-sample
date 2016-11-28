@@ -1,0 +1,73 @@
+﻿@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@model SampleMultiViewMvc.Models.Person
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsAttendance)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsAttendance)
+        </dd>
+
+        <!-- 以下はログインユーザーのみ表示可能 -->
+ @*       @if (SignInManager.IsSignedIn(User)) { *@
+        @if ( User.Identity.IsAuthenticated ) { 
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Blog)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Blog)
+        </dd>
+
+        <!-- 以下は管理者のみ表示可能 -->
+@*     @if ( await UserManager.IsInRoleAsync( await UserManager.GetUserAsync(User), "Administrator" )) {  *@
+            @if ( User.IsInRole("Administrator")) { 
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Hireate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Hireate)
+        </dd>
+            }
+        }
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

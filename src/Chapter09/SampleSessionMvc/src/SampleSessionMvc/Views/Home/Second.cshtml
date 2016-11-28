@@ -1,0 +1,14 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Second Page";
+    var now = this.Context.Session.GetString("now");
+    var data = ViewBag.data;
+    var hash = ViewBag.hash;
+}
+<h2>Second</h2>
+@*
+<div>data: @data</div>
+<div>hash: @hash</div>
+*@
+<div>Index access: @now </div>
+<a asp-action="First">to First page</a>

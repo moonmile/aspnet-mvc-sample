@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{808CB6A1-7809-4A78-8588-DE731F1FF008}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{76E7AD8D-31A0-486A-915F-3543E0C030FD}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SampleWinAuthMvc", "src\SampleWinAuthMvc\SampleWinAuthMvc.xproj", "{48A67F4B-D97D-422A-9CB7-49CB4C85BB72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48A67F4B-D97D-422A-9CB7-49CB4C85BB72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A67F4B-D97D-422A-9CB7-49CB4C85BB72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A67F4B-D97D-422A-9CB7-49CB4C85BB72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A67F4B-D97D-422A-9CB7-49CB4C85BB72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{48A67F4B-D97D-422A-9CB7-49CB4C85BB72} = {808CB6A1-7809-4A78-8588-DE731F1FF008}
+	EndGlobalSection
+EndGlobal

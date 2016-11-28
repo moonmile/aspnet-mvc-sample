@@ -1,0 +1,100 @@
+﻿@model IEnumerable<SampleListDetailMvc.Models.Book>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form asp-action="Index" method="get">
+    Title: <input type="text" name="search" value="@ViewBag.Search" />
+    <input type="submit" value="Filter" />
+</form>
+
+<div>
+    @if (ViewBag.Prev != null )
+    {
+        <a asp-action="Index" asp-route-page="@ViewBag.Prev" asp-route-search="@ViewBag.Search" >prev</a>
+    }
+    else
+    {
+        <span>prev</span>
+    }
+    /
+    @if (ViewBag.Next != null)
+    {
+        <a asp-action="Index" asp-route-page="@ViewBag.Next" asp-route-search="@ViewBag.Search">next</a>
+    }
+    else
+    {
+        <span>next</span>
+    }
+</div>
+@*
+<div>
+    <!-- ページング機能のみ -->
+    @if (ViewBag.Prev != null)
+    {
+        <a asp-action="Index" asp-route-page="@ViewBag.Prev">prev</a>
+    }
+    else
+    {
+        <span>prev</span>
+    }
+    /
+    @if (ViewBag.Next != null)
+    {
+        <a asp-action="Index" asp-route-page="@ViewBag.Next">next</a>
+    }
+    else
+    {
+        <span>next</span>
+    }
+</div>
+    *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Publisher.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publisher.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
