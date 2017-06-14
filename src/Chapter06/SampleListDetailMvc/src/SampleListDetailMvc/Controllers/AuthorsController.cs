@@ -22,7 +22,7 @@ namespace SampleListDetailMvc.Controllers
         // GET: Authors
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Author.Include(a => a.Perfecture);
+            var applicationDbContext = _context.Author.Include(a => a.Prefecture);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,7 +35,7 @@ namespace SampleListDetailMvc.Controllers
             }
 
             var author = await _context.Author
-                .Include(a => a.Perfecture)
+                .Include(a => a.Prefecture)
                 .Include(a => a.Book)
                 .SingleOrDefaultAsync(m => m.Id == id);
             if (author == null)
@@ -49,7 +49,7 @@ namespace SampleListDetailMvc.Controllers
         // GET: Authors/Create
         public IActionResult Create()
         {
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Name");
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Name");
             return View();
         }
 
@@ -58,7 +58,7 @@ namespace SampleListDetailMvc.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Age,Name,PerfectureId")] Author author)
+        public async Task<IActionResult> Create([Bind("Id,Age,Name,PrefectureId")] Author author)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace SampleListDetailMvc.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Name", author.PerfectureId);
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Name", author.PrefectureId);
             return View(author);
         }
 
@@ -83,7 +83,7 @@ namespace SampleListDetailMvc.Controllers
             {
                 return NotFound();
             }
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Name", author.PerfectureId);
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Name", author.PrefectureId);
             return View(author);
         }
 
@@ -92,7 +92,7 @@ namespace SampleListDetailMvc.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Age,Name,PerfectureId")] Author author)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Age,Name,PrefectureId")] Author author)
         {
             if (id != author.Id)
             {
@@ -119,7 +119,7 @@ namespace SampleListDetailMvc.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Name", author.PerfectureId);
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Name", author.PrefectureId);
             return View(author);
         }
 

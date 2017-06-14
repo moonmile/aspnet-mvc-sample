@@ -17,9 +17,9 @@ namespace SampleListDetailMvc.Models
         [Display(Name = "年齢")]
         public int Age { get; set; }
         [Display(Name = "出身地")]
-        public int PerfectureId { get; set; }
+        public int PrefectureId { get; set; }
 
         public virtual ICollection<Book> Book { get; set; }
-        public virtual Perfecture Perfecture { get; set; }
+        public virtual Prefecture Prefecture { get; set; }
     }
 }

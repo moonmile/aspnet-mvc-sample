@@ -182,11 +182,11 @@ namespace SampleListDetailMvc.Data.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<int>("PerfectureId");
+                    b.Property<int>("PrefectureId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PerfectureId");
+                    b.HasIndex("PrefectureId");
 
                     b.ToTable("Author");
                 });
@@ -217,7 +217,7 @@ namespace SampleListDetailMvc.Data.Migrations
                     b.ToTable("Book");
                 });
 
-            modelBuilder.Entity("SampleListDetailMvc.Models.Perfecture", b =>
+            modelBuilder.Entity("SampleListDetailMvc.Models.Prefecture", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -226,7 +226,7 @@ namespace SampleListDetailMvc.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Perfecture");
+                    b.ToTable("Prefecture");
                 });
 
             modelBuilder.Entity("SampleListDetailMvc.Models.Publisher", b =>
@@ -280,9 +280,9 @@ namespace SampleListDetailMvc.Data.Migrations
 
             modelBuilder.Entity("SampleListDetailMvc.Models.Author", b =>
                 {
-                    b.HasOne("SampleListDetailMvc.Models.Perfecture", "Perfecture")
+                    b.HasOne("SampleListDetailMvc.Models.Prefecture", "Prefecture")
                         .WithMany()
-                        .HasForeignKey("PerfectureId")
+                        .HasForeignKey("PrefectureId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

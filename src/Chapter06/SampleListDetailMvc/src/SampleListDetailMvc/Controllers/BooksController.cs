@@ -17,7 +17,7 @@ namespace SampleListDetailMvc.Controllers
         public BooksController(ApplicationDbContext context)
         {
             _context = context;
-            Perfecture.Initialize(_context);
+            Prefecture.Initialize(_context);
         }
 
         // GET: Books

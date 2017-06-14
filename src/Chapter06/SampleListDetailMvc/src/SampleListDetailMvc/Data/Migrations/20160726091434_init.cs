@@ -10,7 +10,7 @@ namespace SampleListDetailMvc.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Perfecture",
+                name: "Prefecture",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -19,7 +19,7 @@ namespace SampleListDetailMvc.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Perfecture", x => x.Id);
+                    table.PrimaryKey("PK_Prefecture", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -43,15 +43,15 @@ namespace SampleListDetailMvc.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Age = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    PerfectureId = table.Column<int>(nullable: false)
+                    PrefectureId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Author", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Author_Perfecture_PerfectureId",
-                        column: x => x.PerfectureId,
-                        principalTable: "Perfecture",
+                        name: "FK_Author_Prefecture_PrefectureId",
+                        column: x => x.PrefectureId,
+                        principalTable: "Prefecture",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -85,9 +85,9 @@ namespace SampleListDetailMvc.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Author_PerfectureId",
+                name: "IX_Author_PrefectureId",
                 table: "Author",
-                column: "PerfectureId");
+                column: "PrefectureId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Book_AuthorId",
@@ -112,7 +112,7 @@ namespace SampleListDetailMvc.Data.Migrations
                 name: "Publisher");
 
             migrationBuilder.DropTable(
-                name: "Perfecture");
+                name: "Prefecture");
         }
     }
 }
