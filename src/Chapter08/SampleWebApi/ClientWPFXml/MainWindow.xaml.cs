@@ -39,11 +39,11 @@ namespace ClientWPFXml
             // 都道府県データを読み込む
             var hc = new HttpClient();
             hc.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/xml"));
-            var res = await hc.GetAsync("http://localhost:5000/api/Perfectures");
+            var res = await hc.GetAsync("http://localhost:5000/api/Prefectures");
             var st = await res.Content.ReadAsStreamAsync();
-            var xs = new System.Xml.Serialization.XmlSerializer(typeof(Perfectures));
-            var obj = xs.Deserialize(st) as Perfectures;
-            _vm.Perfectures = obj.Items;
+            var xs = new System.Xml.Serialization.XmlSerializer(typeof(Prefectures));
+            var obj = xs.Deserialize(st) as Prefectures;
+            _vm.Prefectures = obj.Items;
         }
         MyViewModel _vm;
 

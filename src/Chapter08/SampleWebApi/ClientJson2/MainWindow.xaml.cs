@@ -32,12 +32,12 @@ namespace ClientJson2
         {
             // 都道府県データを読み込む
             var hc = new HttpClient();
-            var res = await hc.GetAsync("http://localhost:5000/api/Perfectures");
+            var res = await hc.GetAsync("http://localhost:5000/api/Prefectures");
             var st = await res.Content.ReadAsStreamAsync();
             var js = new Newtonsoft.Json.JsonSerializer();
             var jr = new Newtonsoft.Json.JsonTextReader(new System.IO.StreamReader(st));
-            var items = js.Deserialize<IEnumerable<Perfecture>>(jr);
-            comboPerfecture.ItemsSource = items;
+            var items = js.Deserialize<IEnumerable<Prefecture>>(jr);
+            comboPrefecture.ItemsSource = items;
         }
 
         private async void clickGet(object sender, RoutedEventArgs e)
@@ -66,7 +66,7 @@ namespace ClientJson2
             if (item == null) return;
             textName.Text = item.Name;
             textAge.Text = item.Age.ToString();
-            comboPerfecture.SelectedValue = item.PerfectureId;
+            comboPrefecture.SelectedValue = item.PrefectureId;
         }
 
         private async void clickPost(object sender, RoutedEventArgs e)
@@ -76,7 +76,7 @@ namespace ClientJson2
             {
                 Name = textName.Text,
                 Age = int.Parse(textAge.Text),
-                PerfectureId = (int)comboPerfecture.SelectedValue
+                PrefectureId = (int)comboPrefecture.SelectedValue
             };
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
             var cont = new StringContent(json, Encoding.UTF8, "application/json");
@@ -94,7 +94,7 @@ namespace ClientJson2
                 Id = id,
                 Name = textName.Text,
                 Age = int.Parse(textAge.Text),
-                PerfectureId = (int)comboPerfecture.SelectedValue
+                PrefectureId = (int)comboPrefecture.SelectedValue
             };
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
             var cont = new StringContent(json, Encoding.UTF8, "application/json");

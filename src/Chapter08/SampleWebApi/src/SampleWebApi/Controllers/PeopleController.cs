@@ -21,14 +21,14 @@ namespace SampleWebApi.Controllers
         {
             _context = context;
             // 初回のみ都道府県のデータを作る
-            Perfecture.Initialize(_context);
+            Prefecture.Initialize(_context);
         }
 
         // GET: api/values
         [HttpGet]
         public async Task<IEnumerable<Person>> Get()
         {
-            var applicationDbContext = _context.Person.Include(p => p.Perfecture);
+            var applicationDbContext = _context.Person.Include(p => p.Prefecture);
             return await applicationDbContext.ToListAsync();
         }
 
@@ -42,7 +42,7 @@ namespace SampleWebApi.Controllers
             }
 
             var person = await _context.Person
-                        .Include(p => p.Perfecture)
+                        .Include(p => p.Prefecture)
                         .SingleOrDefaultAsync(m => m.Id == id);
             return person;
         }

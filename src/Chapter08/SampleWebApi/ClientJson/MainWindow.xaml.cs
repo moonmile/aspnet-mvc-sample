@@ -51,7 +51,7 @@ namespace ClientJson
             var data = new Dictionary<string, string> {
                 { "Name", "new person" },
                 { "EmployeeNo", "ABC-9999" },
-                { "PerfectureId", "1"  },
+                { "PrefectureId", "1"  },
                 { "Age", "99" }
             };
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
@@ -69,7 +69,7 @@ namespace ClientJson
                 { "Id", _id.ToString() },
                 { "Name", "update person" },
                 { "EmployeeNo", "ABC-9999" },
-                { "PerfectureId", "1"  },
+                { "PrefectureId", "1"  },
                 { "Age", "99" }
             };
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(data);

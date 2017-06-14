@@ -17,7 +17,7 @@ namespace SampleWebApi.Migrations
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SampleWebApi.Models.Perfecture", b =>
+            modelBuilder.Entity("SampleWebApi.Models.Prefecture", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -26,7 +26,7 @@ namespace SampleWebApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Perfecture");
+                    b.ToTable("Prefecture");
                 });
 
             modelBuilder.Entity("SampleWebApi.Models.Person", b =>
@@ -38,20 +38,20 @@ namespace SampleWebApi.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<int>("PerfectureId");
+                    b.Property<int>("PrefectureId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PerfectureId");
+                    b.HasIndex("PrefectureId");
 
                     b.ToTable("Person");
                 });
 
             modelBuilder.Entity("SampleWebApi.Models.Person", b =>
                 {
-                    b.HasOne("SampleWebApi.Models.Perfecture", "Perfecture")
+                    b.HasOne("SampleWebApi.Models.Prefecture", "Prefecture")
                         .WithMany()
-                        .HasForeignKey("PerfectureId")
+                        .HasForeignKey("PrefectureId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }

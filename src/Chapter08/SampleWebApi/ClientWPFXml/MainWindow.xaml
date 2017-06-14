@@ -26,8 +26,8 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="170,117,0,0" TextWrapping="Wrap" 
                  Text="{Binding Path=Person.Age, Mode=TwoWay}" VerticalAlignment="Top" Width="165"/>
         <ComboBox HorizontalAlignment="Left" Margin="171,145,0,0" VerticalAlignment="Top" Width="165"
-                  ItemsSource="{Binding Perfectures}"
-                  SelectedValue="{Binding Path=Person.PerfectureId, Mode=TwoWay}"
+                  ItemsSource="{Binding Prefectures}"
+                  SelectedValue="{Binding Path=Person.PrefectureId, Mode=TwoWay}"
                   SelectedValuePath="Id"
                   DisplayMemberPath="Name"
                   />
@@ -39,7 +39,7 @@
                 <DataGridTextColumn Binding="{Binding Path=Id}"  Header="ID"/>
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="名前"/>
                 <DataGridTextColumn Binding="{Binding Path=Age}" Header="年齢"/>
-                <DataGridTextColumn Binding="{Binding Path=Perfecture.Name}" Header="出身地"/>
+                <DataGridTextColumn Binding="{Binding Path=Prefecture.Name}" Header="出身地"/>
             </DataGrid.Columns>
         </DataGrid>
 

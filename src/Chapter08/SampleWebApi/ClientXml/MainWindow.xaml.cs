@@ -28,14 +28,14 @@ namespace ClientXml
             InitializeComponent();
         }
 
-private async void clickGet(object sender, RoutedEventArgs e)
-{
-    var hc = new HttpClient();
-    hc.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/xml"));
-    var res = await hc.GetAsync("http://localhost:5000/api/People");
-    var str = await res.Content.ReadAsStringAsync();
-    textResult.Text = str;
-}
+        private async void clickGet(object sender, RoutedEventArgs e)
+        {
+            var hc = new HttpClient();
+            hc.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/xml"));
+            var res = await hc.GetAsync("http://localhost:5000/api/People");
+            var str = await res.Content.ReadAsStringAsync();
+            textResult.Text = str;
+        }
 
         private int _id = 3;
 
@@ -53,10 +53,11 @@ private async void clickGet(object sender, RoutedEventArgs e)
 
         private async void clickPost(object sender, RoutedEventArgs e)
         {
-            var person = new Person {
+            var person = new Person
+            {
                 Name = "new person",
                 Age = 99,
-                PerfectureId = 1
+                PrefectureId = 1
             };
             var xs = new System.Xml.Serialization.XmlSerializer(typeof(Person));
             var hc = new HttpClient();
@@ -82,7 +83,7 @@ private async void clickGet(object sender, RoutedEventArgs e)
                 Id = _id,
                 Name = "update person",
                 Age = 100,
-                PerfectureId = 1
+                PrefectureId = 1
             };
             var xs = new System.Xml.Serialization.XmlSerializer(typeof(Person));
             var hc = new HttpClient();

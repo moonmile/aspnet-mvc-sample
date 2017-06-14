@@ -36,11 +36,11 @@ namespace ClientXml2
             // 都道府県データを読み込む
             var hc = new HttpClient();
             hc.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/xml"));
-            var res = await hc.GetAsync("http://localhost:5000/api/Perfectures");
+            var res = await hc.GetAsync("http://localhost:5000/api/Prefectures");
             var st = await res.Content.ReadAsStreamAsync();
-            var xs = new System.Xml.Serialization.XmlSerializer(typeof(Perfectures));
-            var obj = xs.Deserialize(st) as Perfectures;
-            comboPerfecture.ItemsSource = obj.Items;
+            var xs = new System.Xml.Serialization.XmlSerializer(typeof(Prefectures));
+            var obj = xs.Deserialize(st) as Prefectures;
+            comboPrefecture.ItemsSource = obj.Items;
         }
 
         private async void clickGet(object sender, RoutedEventArgs e)
@@ -72,7 +72,7 @@ namespace ClientXml2
             var item = xs.Deserialize(st) as Person;
             textName.Text = item.Name;
             textAge.Text = item.Age.ToString();
-            comboPerfecture.SelectedValue = item.PerfectureId;
+            comboPrefecture.SelectedValue = item.PrefectureId;
 
         }
 
@@ -82,7 +82,7 @@ namespace ClientXml2
             {
                 Name = textName.Text,
                 Age = int.Parse( textAge.Text ) ,
-                PerfectureId = (int)comboPerfecture.SelectedValue
+                PrefectureId = (int)comboPrefecture.SelectedValue
             };
             var xs = new System.Xml.Serialization.XmlSerializer(typeof(Person));
             var hc = new HttpClient();
@@ -109,7 +109,7 @@ namespace ClientXml2
                 Id = int.Parse( textId.Text),
                 Name = textName.Text,
                 Age = int.Parse(textAge.Text),
-                PerfectureId = (int)comboPerfecture.SelectedValue
+                PrefectureId = (int)comboPrefecture.SelectedValue
             };
             var xs = new System.Xml.Serialization.XmlSerializer(typeof(Person));
             var hc = new HttpClient();

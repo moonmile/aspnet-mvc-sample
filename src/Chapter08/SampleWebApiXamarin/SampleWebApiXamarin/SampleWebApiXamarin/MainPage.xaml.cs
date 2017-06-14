@@ -24,7 +24,7 @@ public partial class MainPage : ContentPage
         _vm = new MyViewModel();
         this.BindingContext = _vm;
         // 都道府県をロード
-        loadPerfecture();
+        loadPrefecture();
     }
 
         private const string SERVER = "172.16.0.11:5000";
@@ -32,16 +32,16 @@ public partial class MainPage : ContentPage
 
     MyViewModel _vm;
 
-    private async void loadPerfecture()
+    private async void loadPrefecture()
     {
         var hc = new HttpClient();
 
-        var res = await hc.GetAsync($"http://{SERVER}/api/Perfectures");
+        var res = await hc.GetAsync($"http://{SERVER}/api/Prefectures");
         var st = await res.Content.ReadAsStreamAsync();
         var js = new Newtonsoft.Json.JsonSerializer();
         var jr = new Newtonsoft.Json.JsonTextReader(new System.IO.StreamReader(st));
-        var items = js.Deserialize<List<Perfecture>>(jr);
-        _vm.Perfectures = items;
+        var items = js.Deserialize<List<Prefecture>>(jr);
+        _vm.Prefectures = items;
 
         foreach (var it in items)
         {
@@ -49,7 +49,7 @@ public partial class MainPage : ContentPage
         }
         /*
         picker.SelectedIndexChanged += (_, __) => {
-            _vm.Person.PerfectureId = items[picker.SelectedIndex].Id;
+            _vm.Person.PrefectureId = items[picker.SelectedIndex].Id;
         };
         */
     }

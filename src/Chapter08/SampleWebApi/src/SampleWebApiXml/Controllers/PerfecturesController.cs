@@ -12,11 +12,11 @@ namespace SampleWebApiXml.Controllers
 {
 [Produces("application/xml")]
 [Route("api/[controller]")]
-public class PerfecturesController : Controller
+public class PrefecturesController : Controller
 {
     private readonly ApplicationDbContext _context;
 
-    public PerfecturesController(
+    public PrefecturesController(
         ApplicationDbContext context)
     {
         _context = context;
@@ -25,16 +25,16 @@ public class PerfecturesController : Controller
 
     // GET: api/values
     [HttpGet]
-    public Perfectures Get()
+    public Prefectures Get()
     {
-        return new Perfectures() { Items = _context.Perfecture.ToList() };
+        return new Prefectures() { Items = _context.Prefecture.ToList() };
     }
 
     // GET api/values/5
     [HttpGet("{id}")]
-    public Perfecture Get(int id)
+    public Prefecture Get(int id)
     {
-        return _context.Perfecture.FirstOrDefault(m => m.Id == id);
+        return _context.Prefecture.FirstOrDefault(m => m.Id == id);
     }
 }
 }

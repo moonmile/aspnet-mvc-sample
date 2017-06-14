@@ -26,8 +26,8 @@ public class PeopleController : Controller
     [HttpGet]
     public async Task<People> Get()
     {
-        Perfecture.Initialize(_context);
-        var applicationDbContext = _context.Person.Include(p => p.Perfecture);
+        Prefecture.Initialize(_context);
+        var applicationDbContext = _context.Person.Include(p => p.Prefecture);
         return new People
         {
             Items = await applicationDbContext.ToListAsync()

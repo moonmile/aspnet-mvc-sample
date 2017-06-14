@@ -26,7 +26,7 @@
                 .then(function (res) {
                     var msg = "";
                     for (var i = 0; i < res.length; i++) {
-                        msg += res[i].name + " " + res[i].age + " " + res[i].perfecture.name + "<br />";
+                        msg += res[i].name + " " + res[i].age + " " + res[i].Prefecture.name + "<br />";
                     }
                     $("#msg").html(msg);
                 })
@@ -51,7 +51,7 @@
 $.ajax("/api/People", { 
     type: 'POST',
     contentType: 'application/json; charset=utf-8',
-    data: JSON.stringify({ name: 'new person', age: 99, perfectureid: 2 })
+    data: JSON.stringify({ name: 'new person', age: 99, Prefectureid: 2 })
 })
                 .then(function (res) {
                     $("#msg").text(res);
@@ -67,7 +67,7 @@ $.ajax("/api/People", {
 $.ajax("/api/People/" + id, {
     type: 'PUT',
     contentType: 'application/json; charset=utf-8',
-    data: JSON.stringify({ id: id, name: 'update person', age: 100, perfectureid: 1 })
+    data: JSON.stringify({ id: id, name: 'update person', age: 100, Prefectureid: 1 })
 })
                 .then(function (res) {
                     $("#msg").text(res);

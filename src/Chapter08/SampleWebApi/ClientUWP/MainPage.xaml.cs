@@ -39,12 +39,12 @@ public sealed partial class MainPage : Page
         this.DataContext = _vm;
             // 都道府県データを読み込む
             var hc = new HttpClient();
-            var res = await hc.GetAsync("http://localhost:5000/api/Perfectures");
+            var res = await hc.GetAsync("http://localhost:5000/api/Prefectures");
             var st = await res.Content.ReadAsStreamAsync();
             var js = new Newtonsoft.Json.JsonSerializer();
             var jr = new Newtonsoft.Json.JsonTextReader(new System.IO.StreamReader(st));
-            var items = js.Deserialize<List<Perfecture>>(jr);
-            _vm.Perfectures = items;
+            var items = js.Deserialize<List<Prefecture>>(jr);
+            _vm.Prefectures = items;
         }
         MyViewModel _vm;
 

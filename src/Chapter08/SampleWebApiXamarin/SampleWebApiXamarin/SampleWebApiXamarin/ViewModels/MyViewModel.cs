@@ -20,7 +20,7 @@ namespace ClientWPF.ViewModels
 
         private Person _Person;
         private List<Person> _Persons;
-        private List<Perfecture> _Perfectures;
+        private List<Prefecture> _Prefectures;
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -28,7 +28,7 @@ namespace ClientWPF.ViewModels
         {
             _Person = new Person();
             _Persons = new List<Person>();
-            _Perfectures = new List<Perfecture>();
+            _Prefectures = new List<Prefecture>();
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace ClientWPF.ViewModels
                 {
                     _Person = value;
                     OnPropertyChange("Person");
-                    OnPropertyChange("PerfectureIndex");
+                    OnPropertyChange("PrefectureIndex");
                 }
             }
         }
@@ -63,17 +63,17 @@ namespace ClientWPF.ViewModels
             }
         }
         /// <summary>
-        /// ComboBoxに表示するPerfectureリスト
+        /// ComboBoxに表示するPrefectureリスト
         /// </summary>
-        public List<Perfecture> Perfectures
+        public List<Prefecture> Prefectures
         {
-            get { return _Perfectures; }
+            get { return _Prefectures; }
             set
             {
-                if (_Perfectures != value)
+                if (_Prefectures != value)
                 {
-                    _Perfectures = value;
-                    OnPropertyChange("Perfectures");
+                    _Prefectures = value;
+                    OnPropertyChange("Prefectures");
                 }
             }
         }
@@ -93,16 +93,16 @@ namespace ClientWPF.ViewModels
         /// <summary>
         /// ComboBoxの選択時
         /// </summary>
-        public int PerfectureIndex
+        public int PrefectureIndex
         {
             get
             {
-                if (Perfectures == null)
+                if (Prefectures == null)
                     return -1;
 
-                for ( int i=0; i<Perfectures.Count; i++ )
+                for ( int i=0; i<Prefectures.Count; i++ )
                 {
-                    if (Perfectures[i].Id == Person.PerfectureId )
+                    if (Prefectures[i].Id == Person.PrefectureId )
                     {
                         return i;
                     }
@@ -112,11 +112,11 @@ namespace ClientWPF.ViewModels
             set
             {
                 if (_Person == null) return;
-                if (Perfectures == null) return;
+                if (Prefectures == null) return;
 
                 if (value >= 0)
                 {
-                    _Person.PerfectureId = Perfectures[value].Id;
+                    _Person.PrefectureId = Prefectures[value].Id;
                     OnPropertyChange("Person");
                 }
             }

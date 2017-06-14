@@ -26,8 +26,8 @@ namespace SampleWebApi.Controllers
         [HttpGet]
         public async Task<IEnumerable<Person>> Get()
         {
-            Perfecture.Initialize(_context);
-            var applicationDbContext = _context.Person.Include(p => p.Perfecture);
+            Prefecture.Initialize(_context);
+            var applicationDbContext = _context.Person.Include(p => p.Prefecture);
             return await applicationDbContext.ToListAsync();
         }
 

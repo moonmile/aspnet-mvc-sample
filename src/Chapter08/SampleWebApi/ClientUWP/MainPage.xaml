@@ -27,8 +27,8 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="185,146,0,0" TextWrapping="Wrap" 
                  Text="{Binding Path=Person.Age, Mode=TwoWay}" VerticalAlignment="Top" Width="165"/>
         <ComboBox HorizontalAlignment="Left" Margin="185,183,0,0" VerticalAlignment="Top" Width="165"
-                  ItemsSource="{Binding Perfectures}"
-                  SelectedValue="{Binding Path=Person.PerfectureId, Mode=TwoWay}"
+                  ItemsSource="{Binding Prefectures}"
+                  SelectedValue="{Binding Path=Person.PrefectureId, Mode=TwoWay}"
                   SelectedValuePath="Id"
                   DisplayMemberPath="Name"
                   />
@@ -46,7 +46,7 @@
                         <TextBlock Text="{Binding Path=Id}"  Grid.Column="0"/>
                         <TextBlock Text="{Binding Path=Name}" Grid.Column="1" />
                         <TextBlock Text="{Binding Path=Age}"  Grid.Column="2"/>
-                        <TextBlock Text="{Binding Path=Perfecture.Name}" Grid.Column="3" />
+                        <TextBlock Text="{Binding Path=Prefecture.Name}" Grid.Column="3" />
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

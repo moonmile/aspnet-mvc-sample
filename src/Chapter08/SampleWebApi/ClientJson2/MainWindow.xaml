@@ -22,7 +22,7 @@
         <TextBox x:Name="textId" HorizontalAlignment="Left" Height="23" Margin="170,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165"/>
         <TextBox x:Name="textName" HorizontalAlignment="Left" Height="23" Margin="170,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165"/>
         <TextBox x:Name="textAge" HorizontalAlignment="Left" Height="23" Margin="170,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165"/>
-        <ComboBox x:Name="comboPerfecture" HorizontalAlignment="Left" Margin="170,145,0,0" VerticalAlignment="Top" Width="165"
+        <ComboBox x:Name="comboPrefecture" HorizontalAlignment="Left" Margin="170,145,0,0" VerticalAlignment="Top" Width="165"
                   SelectedValuePath="Id"
                   DisplayMemberPath="Name"
                   />
@@ -35,7 +35,7 @@
                 <DataGridTextColumn Binding="{Binding Path=Id}"  Header="ID"/>
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="名前"/>
                 <DataGridTextColumn Binding="{Binding Path=Age}" Header="年齢"/>
-                <DataGridTextColumn Binding="{Binding Path=Perfecture.Name}" Header="出身地"/>
+                <DataGridTextColumn Binding="{Binding Path=Prefecture.Name}" Header="出身地"/>
             </DataGrid.Columns>
         </DataGrid>
 

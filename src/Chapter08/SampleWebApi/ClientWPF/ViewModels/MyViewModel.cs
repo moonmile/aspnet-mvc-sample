@@ -14,7 +14,7 @@ namespace ClientUWP.ViewModels
     {
         private Person _Person;
         private List<Person> _Persons;
-        private List<Perfecture> _Perfectures;
+        private List<Prefecture> _Prefectures;
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -22,7 +22,7 @@ namespace ClientUWP.ViewModels
         {
             _Person = new Person();
             _Persons = new List<Person>();
-            _Perfectures = new List<Perfecture>();
+            _Prefectures = new List<Prefecture>();
         }
         /// <summary>
         /// 画面表示のためのPersonプロパティ
@@ -55,17 +55,17 @@ namespace ClientUWP.ViewModels
             }
         }
         /// <summary>
-        /// ComboBoxに表示するPerfectureリスト
+        /// ComboBoxに表示するPrefectureリスト
         /// </summary>
-        public List<Perfecture> Perfectures
+        public List<Prefecture> Prefectures
         {
-            get { return _Perfectures; }
+            get { return _Prefectures; }
             set
             {
-                if (_Perfectures != value)
+                if (_Prefectures != value)
                 {
-                    _Perfectures = value;
-                    OnPropertyChange("Perfectures");
+                    _Prefectures = value;
+                    OnPropertyChange("Prefectures");
                 }
             }
         }

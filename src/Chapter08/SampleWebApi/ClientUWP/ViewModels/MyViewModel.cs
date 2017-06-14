@@ -14,13 +14,13 @@ namespace ClientUWP.ViewModels
     {
         private Person _Person;
         private List<Person> _Persons;
-        private List<Perfecture> _Perfectures;
+        private List<Prefecture> _Prefectures;
 
         public MyViewModel()
         {
             _Person = new Person();
             _Persons = new List<Person>();
-            _Perfectures = new List<Perfecture>();
+            _Prefectures = new List<Prefecture>();
         }
 
         public Person Person
@@ -47,15 +47,15 @@ namespace ClientUWP.ViewModels
                 }
             }
         }
-        public List<Perfecture> Perfectures
+        public List<Prefecture> Prefectures
         {
-            get { return _Perfectures; }
+            get { return _Prefectures; }
             set
             {
-                if (_Perfectures != value)
+                if (_Prefectures != value)
                 {
-                    _Perfectures = value;
-                    OnPropertyChange("Perfectures");
+                    _Prefectures = value;
+                    OnPropertyChange("Prefectures");
                 }
             }
         }

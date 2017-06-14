@@ -10,7 +10,7 @@ namespace SampleWebApi.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
-        public int PerfectureId { get; set; }
-        public Perfecture Perfecture { get; set; }
+        public int PrefectureId { get; set; }
+        public Prefecture Prefecture { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace SampleWebApiXml.Data
             base.OnModelCreating(builder);
         }
         public DbSet<Person> Person { get; set; }
-        public DbSet<Perfecture> Perfecture { get; set; }
+        public DbSet<Prefecture> Prefecture { get; set; }
     }
 }
 

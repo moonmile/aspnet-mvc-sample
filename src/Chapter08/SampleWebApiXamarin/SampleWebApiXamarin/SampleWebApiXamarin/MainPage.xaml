@@ -30,7 +30,7 @@
       <Entry Text="{Binding Person.Id}"   Grid.Row="0" Grid.Column="0" Placeholder="ID" />
       <Entry Text="{Binding Person.Name}" Grid.Row="1" Grid.Column="0" Placeholder="名前" />
       <Entry Text="{Binding Person.Age}"  Grid.Row="2" Grid.Column="0" Placeholder="年齢" />
-      <Picker x:Name="picker" SelectedIndex="{Binding PerfectureIndex}" Title="都道府県を選択してください" Grid.Row="3" Grid.Column="0"  />
+      <Picker x:Name="picker" SelectedIndex="{Binding PrefectureIndex}" Title="都道府県を選択してください" Grid.Row="3" Grid.Column="0"  />
     </Grid>
     <Label x:Name="textResult" />
     <ListView ItemsSource="{Binding Persons}">
@@ -41,7 +41,7 @@
               <Label Text="{Binding Id}"   WidthRequest="50"/>
               <Label Text="{Binding Name}" WidthRequest="100" />
               <Label Text="{Binding Age}"  WidthRequest="50"/>
-              <Label Text="{Binding Perfecture.Name}" />
+              <Label Text="{Binding Prefecture.Name}" />
             </StackLayout>
           </ViewCell>
         </DataTemplate>

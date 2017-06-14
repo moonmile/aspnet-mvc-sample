@@ -10,7 +10,7 @@ namespace SampleWebApi.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Perfecture",
+                name: "Prefecture",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -19,7 +19,7 @@ namespace SampleWebApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Perfecture", x => x.Id);
+                    table.PrimaryKey("PK_Prefecture", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -30,23 +30,23 @@ namespace SampleWebApi.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Age = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    PerfectureId = table.Column<int>(nullable: false)
+                    PrefectureId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Person", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Person_Perfecture_PerfectureId",
-                        column: x => x.PerfectureId,
-                        principalTable: "Perfecture",
+                        name: "FK_Person_Prefecture_PrefectureId",
+                        column: x => x.PrefectureId,
+                        principalTable: "Prefecture",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Person_PerfectureId",
+                name: "IX_Person_PrefectureId",
                 table: "Person",
-                column: "PerfectureId");
+                column: "PrefectureId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -55,7 +55,7 @@ namespace SampleWebApi.Migrations
                 name: "Person");
 
             migrationBuilder.DropTable(
-                name: "Perfecture");
+                name: "Prefecture");
         }
     }
 }
