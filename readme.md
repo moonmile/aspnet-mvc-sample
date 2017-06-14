@@ -24,3 +24,7 @@ http://ec.nikkeibp.co.jp/item/books/P98880.html
 # Author 
 Tomoaki Masuda
 
+# 改版履歴
+
+- 2017/06/14 VS2017対応、スペルミス（Prefecture）の修正
+
