@@ -1,20 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FC12CD51-C27F-41EB-A565-217E2AC3797B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FAAB3990-15ED-4786-B06F-46D7AC14C16B}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SampleTestControllerMvc", "src\SampleTestControllerMvc\SampleTestControllerMvc.xproj", "{A1E52FFF-F064-4564-B888-9371F0DA54C5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D571C13B-895A-4F7D-83B1-D873BE053DEE}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SampleTestControllerMvc.Tests", "SampleTestControllerMvc.Tests\SampleTestControllerMvc.Tests.xproj", "{0F8DFC9F-CAF8-410B-BD5C-5DDF277AD91A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleTestControllerMvc", "src\SampleTestControllerMvc\SampleTestControllerMvc.csproj", "{A1E52FFF-F064-4564-B888-9371F0DA54C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleTestControllerMvc.Tests", "SampleTestControllerMvc.Tests\SampleTestControllerMvc.Tests.csproj", "{0F8DFC9F-CAF8-410B-BD5C-5DDF277AD91A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,16 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{808CB6A1-7809-4A78-8588-DE731F1FF008}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{76E7AD8D-31A0-486A-915F-3543E0C030FD}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SampleWinAuthMvc", "src\SampleWinAuthMvc\SampleWinAuthMvc.xproj", "{48A67F4B-D97D-422A-9CB7-49CB4C85BB72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleWinAuthMvc", "src\SampleWinAuthMvc\SampleWinAuthMvc.csproj", "{48A67F4B-D97D-422A-9CB7-49CB4C85BB72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
