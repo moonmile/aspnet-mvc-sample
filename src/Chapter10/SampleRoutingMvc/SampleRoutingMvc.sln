@@ -1,16 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{58727FA2-A028-4565-9F19-3ADF03BA8E31}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B438A3AD-594F-4B47-BF4B-B2590CA601D0}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SampleRoutingMvc", "src\SampleRoutingMvc\SampleRoutingMvc.xproj", "{83946FE0-429E-4F71-B0C9-9451160440D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleRoutingMvc", "src\SampleRoutingMvc\SampleRoutingMvc.csproj", "{83946FE0-429E-4F71-B0C9-9451160440D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientRouting", "ClientRouting\ClientRouting.csproj", "{1D133D9C-C434-42D1-88D1-CFD561B57078}"
 EndProject
