@@ -187,7 +187,7 @@ namespace SampleControllerMvc.Data.Migrations
                     b.ToTable("Book");
                 });
 
-            modelBuilder.Entity("SampleControllerMvc.Models.Perfecture", b =>
+            modelBuilder.Entity("SampleControllerMvc.Models.Prefecture", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -196,7 +196,7 @@ namespace SampleControllerMvc.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Perfecture");
+                    b.ToTable("Prefecture");
                 });
 
             modelBuilder.Entity("SampleControllerMvc.Models.Person", b =>
@@ -221,11 +221,11 @@ namespace SampleControllerMvc.Data.Migrations
                         .IsRequired()
                         .HasAnnotation("MaxLength", 20);
 
-                    b.Property<int?>("PerfectureId");
+                    b.Property<int?>("PrefectureId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PerfectureId");
+                    b.HasIndex("PrefectureId");
 
                     b.ToTable("Person");
                 });
@@ -269,9 +269,9 @@ namespace SampleControllerMvc.Data.Migrations
 
             modelBuilder.Entity("SampleControllerMvc.Models.Person", b =>
                 {
-                    b.HasOne("SampleControllerMvc.Models.Perfecture", "Perfecture")
+                    b.HasOne("SampleControllerMvc.Models.Prefecture", "Prefecture")
                         .WithMany()
-                        .HasForeignKey("PerfectureId");
+                        .HasForeignKey("PrefectureId");
                 });
         }
     }

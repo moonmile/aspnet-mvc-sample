@@ -10,7 +10,7 @@ namespace SampleControllerMvc.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Perfecture",
+                name: "Prefecture",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -19,7 +19,7 @@ namespace SampleControllerMvc.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Perfecture", x => x.Id);
+                    table.PrimaryKey("PK_Prefecture", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -35,23 +35,23 @@ namespace SampleControllerMvc.Data.Migrations
                     Hireate = table.Column<DateTime>(nullable: true),
                     IsAttendance = table.Column<bool>(nullable: false),
                     Name = table.Column<string>(maxLength: 20, nullable: false),
-                    PerfectureId = table.Column<int>(nullable: true)
+                    PrefectureId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Person", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Person_Perfecture_PerfectureId",
-                        column: x => x.PerfectureId,
-                        principalTable: "Perfecture",
+                        name: "FK_Person_Prefecture_PrefectureId",
+                        column: x => x.PrefectureId,
+                        principalTable: "Prefecture",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Person_PerfectureId",
+                name: "IX_Person_PrefectureId",
                 table: "Person",
-                column: "PerfectureId");
+                column: "PrefectureId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -60,7 +60,7 @@ namespace SampleControllerMvc.Data.Migrations
                 name: "Person");
 
             migrationBuilder.DropTable(
-                name: "Perfecture");
+                name: "Prefecture");
         }
     }
 }
