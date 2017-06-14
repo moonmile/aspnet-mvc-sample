@@ -173,7 +173,7 @@ namespace SampleAnoModelMvc.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("SampleAnoModelMvc.Models.Perfecture", b =>
+            modelBuilder.Entity("SampleAnoModelMvc.Models.Prefecture", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -182,7 +182,7 @@ namespace SampleAnoModelMvc.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Perfecture");
+                    b.ToTable("Prefecture");
                 });
 
             modelBuilder.Entity("SampleAnoModelMvc.Models.Person", b =>
@@ -206,11 +206,11 @@ namespace SampleAnoModelMvc.Data.Migrations
                         .IsRequired()
                         .HasAnnotation("MaxLength", 20);
 
-                    b.Property<int>("PerfectureId");
+                    b.Property<int>("PrefectureId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PerfectureId");
+                    b.HasIndex("PrefectureId");
 
                     b.ToTable("Person");
                 });
@@ -254,9 +254,9 @@ namespace SampleAnoModelMvc.Data.Migrations
 
             modelBuilder.Entity("SampleAnoModelMvc.Models.Person", b =>
                 {
-                    b.HasOne("SampleAnoModelMvc.Models.Perfecture", "Perfecture")
+                    b.HasOne("SampleAnoModelMvc.Models.Prefecture", "Prefecture")
                         .WithMany()
-                        .HasForeignKey("PerfectureId")
+                        .HasForeignKey("PrefectureId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }

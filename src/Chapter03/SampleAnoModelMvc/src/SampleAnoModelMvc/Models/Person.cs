@@ -12,8 +12,8 @@ namespace SampleAnoModelMvc.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int? Age { get; set; }
-        public int PerfectureId { get; set; }
-        public Perfecture Perfecture { get; set; }
+        public int PrefectureId { get; set; }
+        public Prefecture Prefecture { get; set; }
         public DateTime? Hireate { get; set; }
         public bool IsAttendance { get; set; }
         public string Email { get; set; }
@@ -35,10 +35,10 @@ namespace SampleAnoModelMvc.Models
         [DisplayFormat(DataFormatString = "{0} 歳")]
         public int? Age { get; set; }                               // NULLを有効にする
 
-        // Perfectureへ外部リンク
+        // Prefectureへ外部リンク
         [Display(Name = "出身地")]
-        public int PerfectureId { get; set; }
-        public Perfecture Perfecture { get; set; }
+        public int PrefectureId { get; set; }
+        public Prefecture Prefecture { get; set; }
 
         // 入社日（日付）
         [Display(Name = "入社日")]

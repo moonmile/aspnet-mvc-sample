@@ -1,16 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F7D52124-9E0A-4D0E-90A7-C8C7D52DBE54}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C6BFB7BB-A656-4993-85AF-985CA9B1C7A5}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SampleAnoModelMvc", "src\SampleAnoModelMvc\SampleAnoModelMvc.xproj", "{A4EDC45C-67C0-450D-9485-A2BCFDF8012E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleAnoModelMvc", "src\SampleAnoModelMvc\SampleAnoModelMvc.csproj", "{A4EDC45C-67C0-450D-9485-A2BCFDF8012E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

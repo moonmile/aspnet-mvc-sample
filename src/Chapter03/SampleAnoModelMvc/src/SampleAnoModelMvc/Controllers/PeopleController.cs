@@ -17,13 +17,13 @@ namespace SampleAnoModelMvc.Controllers
 public PeopleController(ApplicationDbContext context)
 {
     _context = context;
-    Perfecture.Initialize(context);  
+    Prefecture.Initialize(context);  
 }
 
         // GET: People
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Person.Include(p => p.Perfecture);
+            var applicationDbContext = _context.Person.Include(p => p.Prefecture);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -47,7 +47,7 @@ public PeopleController(ApplicationDbContext context)
         // GET: People/Create
         public IActionResult Create()
         {
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Name");
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Name");
             return View();
         }
 
@@ -56,7 +56,7 @@ public PeopleController(ApplicationDbContext context)
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Age,Blog,Email,EmployeeNo,Hireate,IsAttendance,Name,PerfectureId")] Person person)
+        public async Task<IActionResult> Create([Bind("Id,Age,Blog,Email,EmployeeNo,Hireate,IsAttendance,Name,PrefectureId")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ public PeopleController(ApplicationDbContext context)
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Name", person.PerfectureId);
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Name", person.PrefectureId);
             return View(person);
         }
 
@@ -81,7 +81,7 @@ public PeopleController(ApplicationDbContext context)
             {
                 return NotFound();
             }
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Name", person.PerfectureId);
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Name", person.PrefectureId);
             return View(person);
         }
 
@@ -90,7 +90,7 @@ public PeopleController(ApplicationDbContext context)
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Age,Blog,Email,EmployeeNo,Hireate,IsAttendance,Name,PerfectureId")] Person person)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Age,Blog,Email,EmployeeNo,Hireate,IsAttendance,Name,PrefectureId")] Person person)
         {
             if (id != person.Id)
             {
@@ -117,7 +117,7 @@ public PeopleController(ApplicationDbContext context)
                 }
                 return RedirectToAction("Index");
             }
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Name", person.PerfectureId);
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Name", person.PrefectureId);
             return View(person);
         }
 
