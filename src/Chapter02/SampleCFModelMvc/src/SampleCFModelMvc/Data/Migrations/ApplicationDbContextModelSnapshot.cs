@@ -172,7 +172,7 @@ namespace SampleCFModelMvc.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("SampleCFModelMvc.Models.Perfecture", b =>
+            modelBuilder.Entity("SampleCFModelMvc.Models.Prefecture", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -181,7 +181,7 @@ namespace SampleCFModelMvc.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Perfecture");
+                    b.ToTable("Prefecture");
                 });
 
             modelBuilder.Entity("SampleCFModelMvc.Models.Person", b =>
@@ -193,11 +193,11 @@ namespace SampleCFModelMvc.Data.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<int>("PerfectureId");
+                    b.Property<int>("PrefectureId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PerfectureId");
+                    b.HasIndex("PrefectureId");
 
                     b.ToTable("Person");
                 });
@@ -241,9 +241,9 @@ namespace SampleCFModelMvc.Data.Migrations
 
             modelBuilder.Entity("SampleCFModelMvc.Models.Person", b =>
                 {
-                    b.HasOne("SampleCFModelMvc.Models.Perfecture", "Perfecture")
+                    b.HasOne("SampleCFModelMvc.Models.Prefecture", "Prefecture")
                         .WithMany()
-                        .HasForeignKey("PerfectureId")
+                        .HasForeignKey("PrefectureId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }

@@ -10,7 +10,7 @@ namespace SampleCFModelMvc.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
 migrationBuilder.CreateTable(
-    name: "Perfecture",
+    name: "Prefecture",
     columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -19,25 +19,25 @@ migrationBuilder.CreateTable(
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Perfecture", x => x.Id);
+                    table.PrimaryKey("PK_Prefecture", x => x.Id);
                 });
 
             migrationBuilder.AddColumn<int>(
-                name: "PerfectureId",
+                name: "PrefectureId",
                 table: "Person",
                 nullable: false,
                 defaultValue: 0);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Person_PerfectureId",
+                name: "IX_Person_PrefectureId",
                 table: "Person",
-                column: "PerfectureId");
+                column: "PrefectureId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Person_Perfecture_PerfectureId",
+                name: "FK_Person_Prefecture_PrefectureId",
                 table: "Person",
-                column: "PerfectureId",
-                principalTable: "Perfecture",
+                column: "PrefectureId",
+                principalTable: "Prefecture",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
         }
@@ -45,19 +45,19 @@ migrationBuilder.CreateTable(
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Person_Perfecture_PerfectureId",
+                name: "FK_Person_Prefecture_PrefectureId",
                 table: "Person");
 
             migrationBuilder.DropIndex(
-                name: "IX_Person_PerfectureId",
+                name: "IX_Person_PrefectureId",
                 table: "Person");
 
             migrationBuilder.DropColumn(
-                name: "PerfectureId",
+                name: "PrefectureId",
                 table: "Person");
 
             migrationBuilder.DropTable(
-                name: "Perfecture");
+                name: "Prefecture");
         }
     }
 }

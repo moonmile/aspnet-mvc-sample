@@ -71,7 +71,7 @@ namespace SampleDBModelMvc.Models
                 entity.Property(e => e.Price).HasColumnType("decimal");
             });
 
-            modelBuilder.Entity<Perfecture>(entity =>
+            modelBuilder.Entity<Prefecture>(entity =>
             {
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
@@ -94,13 +94,13 @@ namespace SampleDBModelMvc.Models
                     .HasColumnName("name")
                     .HasColumnType("varchar(50)");
 
-                entity.Property(e => e.PerfectureId).HasColumnName("perfecture_id");
+                entity.Property(e => e.PrefectureId).HasColumnName("Prefecture_id");
 
-                entity.HasOne(d => d.Perfecture)
+                entity.HasOne(d => d.Prefecture)
                     .WithMany(p => p.Person)
-                    .HasForeignKey(d => d.PerfectureId)
+                    .HasForeignKey(d => d.PrefectureId)
                     .OnDelete(DeleteBehavior.Restrict)
-                    .HasConstraintName("FK_Person_Perfecture");
+                    .HasConstraintName("FK_Person_Prefecture");
             });
         }
 
@@ -108,7 +108,7 @@ namespace SampleDBModelMvc.Models
         public virtual DbSet<Book> Book { get; set; }
         public virtual DbSet<City> City { get; set; }
         public virtual DbSet<Movie> Movie { get; set; }
-        public virtual DbSet<Perfecture> Perfecture { get; set; }
+        public virtual DbSet<Prefecture> Prefecture { get; set; }
         public virtual DbSet<Person> Person { get; set; }
     }
 }

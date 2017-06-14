@@ -21,7 +21,7 @@ namespace SampleDBModelMvc.Controllers
         // GET: People
         public async Task<IActionResult> Index()
         {
-            var testdbContext = _context.Person.Include(p => p.Perfecture);
+            var testdbContext = _context.Person.Include(p => p.Prefecture);
             return View(await testdbContext.ToListAsync());
         }
 
@@ -45,7 +45,7 @@ namespace SampleDBModelMvc.Controllers
         // GET: People/Create
         public IActionResult Create()
         {
-            ViewData["PerfectureId"] = new SelectList(_context.Perfecture, "Id", "Name");
+            ViewData["PrefectureId"] = new SelectList(_context.Prefecture, "Id", "Name");
             return View();
         }
 
@@ -54,7 +54,7 @@ namespace SampleDBModelMvc.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Age,Name,PerfectureId")] Person person)
+        public async Task<IActionResult> Create([Bind("Id,Age,Name,PrefectureId")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +62,7 @@ namespace SampleDBModelMvc.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewData["PerfectureId"] = new SelectList(_context.Perfecture, "Id", "Name", person.PerfectureId);
+            ViewData["PrefectureId"] = new SelectList(_context.Prefecture, "Id", "Name", person.PrefectureId);
             return View(person);
         }
 
@@ -79,7 +79,7 @@ public async Task<IActionResult> Edit(int? id)
     {
         return NotFound();
     }
-    ViewData["PerfectureId"] = new SelectList(_context.Perfecture, "Id", "Name", person.PerfectureId);
+    ViewData["PrefectureId"] = new SelectList(_context.Prefecture, "Id", "Name", person.PrefectureId);
     return View(person);
 }
 
@@ -88,7 +88,7 @@ public async Task<IActionResult> Edit(int? id)
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Age,Name,PerfectureId")] Person person)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Age,Name,PrefectureId")] Person person)
         {
             if (id != person.Id)
             {
@@ -115,7 +115,7 @@ public async Task<IActionResult> Edit(int? id)
                 }
                 return RedirectToAction("Index");
             }
-            ViewData["PerfectureId"] = new SelectList(_context.Perfecture, "Id", "Name", person.PerfectureId);
+            ViewData["PrefectureId"] = new SelectList(_context.Prefecture, "Id", "Name", person.PrefectureId);
             return View(person);
         }
 

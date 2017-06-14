@@ -8,8 +8,8 @@ namespace SampleMvc.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
-        public int PerfectureId { get; set; }
+        public int PrefectureId { get; set; }
 
-        public virtual Perfecture Perfecture { get; set; }
+        public virtual Prefecture Prefecture { get; set; }
     }
 }

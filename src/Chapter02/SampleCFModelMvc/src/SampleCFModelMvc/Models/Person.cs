@@ -10,8 +10,8 @@ namespace SampleCFModelMvc.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
-        // Perfectureへ外部リンク
-        public int PerfectureId { get; set; }
-        public Perfecture Perfecture { get; set; }
+        // Prefectureへ外部リンク
+        public int PrefectureId { get; set; }
+        public Prefecture Prefecture { get; set; }
     }
 }

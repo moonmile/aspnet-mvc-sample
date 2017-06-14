@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace SampleMvc.Models
 {
-    public partial class Perfecture
+    public partial class Prefecture
     {
-        public Perfecture()
+        public Prefecture()
         {
             Person = new HashSet<Person>();
         }
