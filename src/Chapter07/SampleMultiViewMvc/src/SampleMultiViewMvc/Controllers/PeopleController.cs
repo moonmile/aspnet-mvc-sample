@@ -61,7 +61,7 @@ public class PeopleController : Controller
         // GET: People
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Person.Include(p => p.Perfecture);
+            var applicationDbContext = _context.Person.Include(p => p.Prefecture);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -87,7 +87,7 @@ public class PeopleController : Controller
         [Authorize]
         public IActionResult Create()
         {
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Id");
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Id");
             return View();
         }
 
@@ -97,7 +97,7 @@ public class PeopleController : Controller
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public async Task<IActionResult> Create([Bind("Id,Age,Blog,Email,EmployeeNo,Hireate,IsAttendance,Name,PerfectureId")] Person person)
+        public async Task<IActionResult> Create([Bind("Id,Age,Blog,Email,EmployeeNo,Hireate,IsAttendance,Name,PrefectureId")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -105,7 +105,7 @@ public class PeopleController : Controller
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Id", person.PerfectureId);
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Id", person.PrefectureId);
             return View(person);
         }
 
@@ -124,7 +124,7 @@ public class PeopleController : Controller
             {
                 return NotFound();
             }
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Id", person.PerfectureId);
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Id", person.PrefectureId);
             return View(person);
         }
 
@@ -134,7 +134,7 @@ public class PeopleController : Controller
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Age,Blog,Email,EmployeeNo,Hireate,IsAttendance,Name,PerfectureId")] Person person)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Age,Blog,Email,EmployeeNo,Hireate,IsAttendance,Name,PrefectureId")] Person person)
         {
             if (id != person.Id)
             {
@@ -161,7 +161,7 @@ public class PeopleController : Controller
                 }
                 return RedirectToAction("Index");
             }
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Id", person.PerfectureId);
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Id", person.PrefectureId);
             return View(person);
         }
 

@@ -1,16 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B9AA8EB4-D9F5-4914-8C60-A9141090B434}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E60AE592-AED6-43DC-A577-39CD0A7C5C4D}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SampleMultiViewMvc", "src\SampleMultiViewMvc\SampleMultiViewMvc.xproj", "{3FA69F35-BCC1-4B43-B9FE-E6D193399FAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleMultiViewMvc", "src\SampleMultiViewMvc\SampleMultiViewMvc.csproj", "{3FA69F35-BCC1-4B43-B9FE-E6D193399FAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

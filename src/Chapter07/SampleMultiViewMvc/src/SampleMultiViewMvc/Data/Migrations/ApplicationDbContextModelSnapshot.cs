@@ -172,7 +172,7 @@ namespace SampleMultiViewMvc.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("SampleMultiViewMvc.Models.Perfecture", b =>
+            modelBuilder.Entity("SampleMultiViewMvc.Models.Prefecture", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -181,7 +181,7 @@ namespace SampleMultiViewMvc.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Perfecture");
+                    b.ToTable("Prefecture");
                 });
 
             modelBuilder.Entity("SampleMultiViewMvc.Models.Person", b =>
@@ -206,11 +206,11 @@ namespace SampleMultiViewMvc.Data.Migrations
                         .IsRequired()
                         .HasAnnotation("MaxLength", 20);
 
-                    b.Property<int?>("PerfectureId");
+                    b.Property<int?>("PrefectureId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PerfectureId");
+                    b.HasIndex("PrefectureId");
 
                     b.ToTable("Person");
                 });
@@ -254,9 +254,9 @@ namespace SampleMultiViewMvc.Data.Migrations
 
             modelBuilder.Entity("SampleMultiViewMvc.Models.Person", b =>
                 {
-                    b.HasOne("SampleMultiViewMvc.Models.Perfecture", "Perfecture")
+                    b.HasOne("SampleMultiViewMvc.Models.Prefecture", "Prefecture")
                         .WithMany()
-                        .HasForeignKey("PerfectureId");
+                        .HasForeignKey("PrefectureId");
                 });
         }
     }
