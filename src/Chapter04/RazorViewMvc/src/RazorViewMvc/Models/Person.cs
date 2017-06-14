@@ -20,10 +20,10 @@ namespace RazorViewMvc.Models
         [DisplayFormat(DataFormatString = "{0} 歳")]
         public int? Age { get; set; }                               
 
-        // Perfectureへ外部リンク
+        // Prefectureへ外部リンク
         [Display(Name = "出身地")]
-        public int PerfectureId { get; set; }
-        public Perfecture Perfecture { get; set; }
+        public int PrefectureId { get; set; }
+        public Prefecture Prefecture { get; set; }
 
         // 入社日（日付）
         [Display(Name = "入社日")]

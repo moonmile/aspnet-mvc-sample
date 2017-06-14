@@ -173,7 +173,7 @@ namespace TagHelperViewMvc.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("TagHelperViewMvc.Models.Perfecture", b =>
+            modelBuilder.Entity("TagHelperViewMvc.Models.Prefecture", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -182,7 +182,7 @@ namespace TagHelperViewMvc.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Perfecture");
+                    b.ToTable("Prefecture");
                 });
 
             modelBuilder.Entity("TagHelperViewMvc.Models.Person", b =>
@@ -207,11 +207,11 @@ namespace TagHelperViewMvc.Data.Migrations
                         .IsRequired()
                         .HasAnnotation("MaxLength", 20);
 
-                    b.Property<int?>("PerfectureId");
+                    b.Property<int?>("PrefectureId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PerfectureId");
+                    b.HasIndex("PrefectureId");
 
                     b.ToTable("Person");
                 });
@@ -255,9 +255,9 @@ namespace TagHelperViewMvc.Data.Migrations
 
             modelBuilder.Entity("TagHelperViewMvc.Models.Person", b =>
                 {
-                    b.HasOne("TagHelperViewMvc.Models.Perfecture", "Perfecture")
+                    b.HasOne("TagHelperViewMvc.Models.Prefecture", "Prefecture")
                         .WithMany()
-                        .HasForeignKey("PerfectureId");
+                        .HasForeignKey("PrefectureId");
                 });
         }
     }

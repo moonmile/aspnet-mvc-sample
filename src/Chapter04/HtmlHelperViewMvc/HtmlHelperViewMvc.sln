@@ -1,16 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7DB2C599-A278-4D3C-9A92-9F6F91B20B03}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D84376BC-1A3D-4C06-AA1A-16E3AF2A7207}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HtmlHelperViewMvc", "src\HtmlHelperViewMvc\HtmlHelperViewMvc.xproj", "{69DE56E0-5A58-43FC-AF4D-1E02E7E71455}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlHelperViewMvc", "src\HtmlHelperViewMvc\HtmlHelperViewMvc.csproj", "{69DE56E0-5A58-43FC-AF4D-1E02E7E71455}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

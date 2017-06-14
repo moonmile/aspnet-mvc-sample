@@ -66,7 +66,7 @@ namespace HtmlHelperViewMvc.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("HtmlHelperViewMvc.Models.Perfecture", b =>
+            modelBuilder.Entity("HtmlHelperViewMvc.Models.Prefecture", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -75,7 +75,7 @@ namespace HtmlHelperViewMvc.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Perfecture");
+                    b.ToTable("Prefecture");
                 });
 
             modelBuilder.Entity("HtmlHelperViewMvc.Models.Person", b =>
@@ -100,11 +100,11 @@ namespace HtmlHelperViewMvc.Data.Migrations
                         .IsRequired()
                         .HasAnnotation("MaxLength", 20);
 
-                    b.Property<int?>("PerfectureId");
+                    b.Property<int?>("PrefectureId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PerfectureId");
+                    b.HasIndex("PrefectureId");
 
                     b.ToTable("Person");
                 });
@@ -218,9 +218,9 @@ namespace HtmlHelperViewMvc.Data.Migrations
 
             modelBuilder.Entity("HtmlHelperViewMvc.Models.Person", b =>
                 {
-                    b.HasOne("HtmlHelperViewMvc.Models.Perfecture", "Perfecture")
+                    b.HasOne("HtmlHelperViewMvc.Models.Prefecture", "Prefecture")
                         .WithMany()
-                        .HasForeignKey("PerfectureId");
+                        .HasForeignKey("PrefectureId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>

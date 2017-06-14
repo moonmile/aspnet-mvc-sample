@@ -17,13 +17,13 @@ namespace TagHelperViewMvc.Controllers
         public PeopleController(ApplicationDbContext context)
         {
             _context = context;
-            Perfecture.Initialize(_context);
+            Prefecture.Initialize(_context);
         }
 
         // GET: People
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Person.Include(p => p.Perfecture);
+            var applicationDbContext = _context.Person.Include(p => p.Prefecture);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -47,7 +47,7 @@ namespace TagHelperViewMvc.Controllers
         // GET: People/Create
         public IActionResult Create()
         {
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Name");
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Name");
 
             
             /*
@@ -60,7 +60,7 @@ namespace TagHelperViewMvc.Controllers
                 new Tuple<int, string>( 3, "‰«“êŒ§"),
             };
 
-            ViewBag.PerfectureId = new SelectList(lst);
+            ViewBag.PrefectureId = new SelectList(lst);
                     */
 
             return View();
@@ -71,7 +71,7 @@ namespace TagHelperViewMvc.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Age,Blog,Email,EmployeeNo,Hireate,IsAttendance,Name,PerfectureId")] Person person)
+        public async Task<IActionResult> Create([Bind("Id,Age,Blog,Email,EmployeeNo,Hireate,IsAttendance,Name,PrefectureId")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace TagHelperViewMvc.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Name", person.PerfectureId);
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Name", person.PrefectureId);
             return View(person);
         }
 
@@ -96,7 +96,7 @@ namespace TagHelperViewMvc.Controllers
             {
                 return NotFound();
             }
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Name", person.PerfectureId);
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Name", person.PrefectureId);
             return View(person);
         }
 
@@ -105,7 +105,7 @@ namespace TagHelperViewMvc.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Age,Blog,Email,EmployeeNo,Hireate,IsAttendance,Name,PerfectureId")] Person person)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Age,Blog,Email,EmployeeNo,Hireate,IsAttendance,Name,PrefectureId")] Person person)
         {
             if (id != person.Id)
             {
@@ -132,7 +132,7 @@ namespace TagHelperViewMvc.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            ViewData["PerfectureId"] = new SelectList(_context.Set<Perfecture>(), "Id", "Name", person.PerfectureId);
+            ViewData["PrefectureId"] = new SelectList(_context.Set<Prefecture>(), "Id", "Name", person.PrefectureId);
             return View(person);
         }
 

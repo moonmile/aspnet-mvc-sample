@@ -172,7 +172,7 @@ namespace RazorViewMvc.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("RazorViewMvc.Models.Perfecture", b =>
+            modelBuilder.Entity("RazorViewMvc.Models.Prefecture", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -181,7 +181,7 @@ namespace RazorViewMvc.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Perfecture");
+                    b.ToTable("Prefecture");
                 });
 
             modelBuilder.Entity("RazorViewMvc.Models.Person", b =>
@@ -206,11 +206,11 @@ namespace RazorViewMvc.Data.Migrations
                         .IsRequired()
                         .HasAnnotation("MaxLength", 20);
 
-                    b.Property<int>("PerfectureId");
+                    b.Property<int>("PrefectureId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PerfectureId");
+                    b.HasIndex("PrefectureId");
 
                     b.ToTable("Person");
                 });
@@ -254,9 +254,9 @@ namespace RazorViewMvc.Data.Migrations
 
             modelBuilder.Entity("RazorViewMvc.Models.Person", b =>
                 {
-                    b.HasOne("RazorViewMvc.Models.Perfecture", "Perfecture")
+                    b.HasOne("RazorViewMvc.Models.Prefecture", "Prefecture")
                         .WithMany()
-                        .HasForeignKey("PerfectureId")
+                        .HasForeignKey("PrefectureId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }
