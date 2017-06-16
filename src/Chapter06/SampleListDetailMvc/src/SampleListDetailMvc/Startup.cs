@@ -76,6 +76,7 @@ namespace SampleListDetailMvc
             app.UseIdentity();
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
+            app.ApplicationServices.GetRequiredService<ApplicationDbContext>().Seed();
 
             app.UseMvc(routes =>
             {
@@ -84,5 +85,6 @@ namespace SampleListDetailMvc
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
     }
 }
