@@ -9,13 +9,13 @@ http://ec.nikkeibp.co.jp/item/books/P98880.html
 # 動作環境
 
 - Windows 10.0.14393 Anniversary edition
-- Visual Studio 2015 Professional Update 3
-- Visual Studio 2015 Community Edition
+- Visual Studio 2017 Professional
+- Visual Studio 2017 Community Edition
 - Visual Studio Code
-- .NET Core 1.0.1
-- dotnet 1.0.0-preview2-003121
-- SQL Server 2014 standard
-- SQL Server Management Studio 2014
+- .NET Core 1.1
+- dotnet 1.1.0
+- SQL Server 2016 standard
+- SQL Server Management Studio 2016
 
 # Licence
 
